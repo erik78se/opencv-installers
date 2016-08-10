@@ -28,6 +28,17 @@ Now, create a virtual env (as your own user, don't be root)
 python3.5 -m venv python35-opencv
 ```
 
+Install packages into the virtual env
+```
+source myvirtualenv/bin/activate
+pip install matplotlib
+pip install numpy
+pip install scipy
+pip install scikit-learn
+pip install cython
+pip install -U scikit-image
+```
+
 ## Install openCV 3.1.0
 
 From http://docs.opencv.org/2.4/doc/tutorials/introduction/linux_install/linux_install.html#getting-the-latest-stable-opencv-version
