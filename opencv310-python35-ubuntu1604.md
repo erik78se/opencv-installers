@@ -75,19 +75,24 @@ git checkout 3.1.0
 Now, create the installation target directory (from your virtual env)
 and configure the build.
 
-Activate the virtualenv and cmake.
+Activate the virtualenv and cmake. (Don't use gcc > 4.9 if you are using CUDA)
+(-D CUDA_NVCC_FLAGS="-ccbin gcc-4.9"
+See https://github.com/opencv/opencv/issues/6513)
 ```
 source myvirtualenv/bin/activate
 mkdir ~/opencv3.1.0
 cd ~/git/opencv/
 mkdir release
 cd release
+export CC=$(which gcc-4.9)
+export CXX=$(which g++-4.9)
 cmake -D CMAKE_BUILD_TYPE=RELEASE \
 	-D CMAKE_INSTALL_PREFIX=~/opencv3.1.0 \
 	-D INSTALL_C_EXAMPLES=OFF \
 	-D INSTALL_PYTHON_EXAMPLES=ON \
 	-D OPENCV_EXTRA_MODULES_PATH=~/git/opencv_contrib/modules \
-	-D BUILD_EXAMPLES=ON ..
+	-D BUILD_EXAMPLES=ON 
+	-D CUDA_NVCC_FLAGS="-ccbin gcc-4.9"..
 ```
 You should see something like:
 ```
