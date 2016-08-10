@@ -45,6 +45,8 @@ Create a virtual env and point to python 3.4 (as your own user, don't be root)
 virtualenv -p $(which python3.4) myvirtualenv
 ```
 
+In case you miss python 3.4, read the blogg: http://devmartin.com/blog/2016/04/creating-a-virtual-environment-with-python3.4-on-ubuntu-16.04-xenial-xerus/
+
 Install packages into the virtual env
 ```
 source myvirtualenv/bin/activate
