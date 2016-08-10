@@ -94,6 +94,7 @@ and configure the build.
 
 If you are on ubuntu 15.04 or higher, you need to install gcc-4.7 and g++-4.7
 since openCV 3.1.0 will fail to compile on gnu compilers 4.9+
+(According to Issue #1, it should work on gcc-5.3 Ubuntu 16.04)
 ```
 sudo apt-get install g++-4.7 gcc-4.7
 export CC=$(which gcc-4.7)
